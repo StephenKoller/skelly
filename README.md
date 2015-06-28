@@ -1,3 +1,3 @@
-!Vinehall
+Skelly
 
-A modern Ghost template for my music event blog at http://www.vine-hall.com/
+A basic Ghost blog theme skeleton.
