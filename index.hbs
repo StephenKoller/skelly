@@ -1,0 +1,30 @@
+{{!< default}}
+{{> "header"}}
+<main class="main_vinehall" role="main">
+  {{#foreach posts}}
+    <article class="article_vinehall" role="article" itemscope itemtype="http://schema.org/Article">
+      <header class="postheader_vinehall">
+        <time class="date_vinehall" datetime="{{date format='dddd DD MMM YYYY'}}" itemprop="datePublished">
+        <h1 class="posttitle_vinehall" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{title}}</a></h1>
+      </header>
+
+      <div class="postcontent_vinehall" itemprop="articleBody">
+          {{content}}
+      </div>
+
+      {{#if tags}}
+        <div class="posttags_vinehall">
+          Tags: {{tags separator=" | "}}
+        </div>
+      {{/if}}
+
+    </article>
+  {{/foreach}}
+
+  {{#if pagination}}
+    <div class="pagination_vinehall">
+      {{{pagination}}}
+    </div>
+  {{/if}}
+</main>
+{{> "footer"}}

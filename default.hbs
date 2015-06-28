@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{! Document Settings }}
+  <meta http-equiv="content-type" content="text/html" charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+
+  {{! Page Meta }}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+
+  {{! Styles }}
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+  {{! Responsive Meta Tags }}
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobilOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+  <div class="wrapper_vinehall">
+    {{{body}}}
+  </div>
+
+  {{ghost_foot}}
+</body>
+</html>

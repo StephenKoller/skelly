@@ -1,0 +1,63 @@
+{{!< default}}
+{{> "header"}}
+<main class="main_vinehall" role="main">
+  {{#post}}
+  <article class="article_vinehall" role="article" itemscope itemtype="http://schema.org/Article">
+    <header class="postheader_vinehall">
+      <time class="date_vinehall" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+      <h1 class="posttitle_vinehall" itemprop="headline">{{title}}</h1>
+    </header>
+
+    <div class="postcontent_vinehall" itemprop="articleBody">
+      {{content}}
+    </div>
+
+    {{#if tags}}
+      <div class="posttags_vinehall">
+        Tags: {{tags separator=" | "}}
+      </div>
+    {{/if}}
+
+    <div class="sharepost_vinehall">
+      <h4 class="share_vinehall">Share this post: &nbsp;</h4>
+      <a class="share_vinehall icon-twitter" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"><span class="hidethis_vinehall">Twitter</span></a>
+      <a class="share_vinehall icon-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{url absolute="true"}}"><span class="hidethis_vinehall">Facebook</span></a>
+      <a class="share_vinehall icon-gplus" target="_blank" href="http://plus.google.com/share?url={{url absolute="true"}}"><span class="hidethis_vinehall">Google+</span></a>
+    </div>
+
+    {{#if author}}
+      <footer class="postfooter_vinehall">
+        <address itemscope itemtype="http://schema.org/Person">
+          {{#if author.image}}
+            <div class="authorimage_vinehall">
+              <img src="{{author.image}}" itemprop="image" />
+            </div>
+          {{/if}}
+
+          <h4 class="authorname_vinehall">
+            <span itemprop="author">{{author.name}}</span>
+          </h4>
+
+          {{#if author.website}}
+            <div class="authorwebsite_uber"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+          {{/if}}
+        </address>
+
+        <div class="authorbio_vinehall">
+          <p>
+            {{author.bio}}
+          </p>
+        </div>
+      </footer>
+    {{/if}}
+
+  </article>
+  {{/post}}
+
+  {{#if pagination}}
+    <div class="pagination_vinehall">
+      {{{pagination}}}
+    </div>
+  {{/if}}
+</main>
+{{> "footer"}}
